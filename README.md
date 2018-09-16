@@ -10,7 +10,7 @@ https://truffleframework.com
 ### Clone the Repository
 
 ```sh
-git clone https://github.com/ViRehab/Token
+https://github.com/binodnp/vesting-schedule
 ```
 
 ### Install Packages
@@ -32,6 +32,8 @@ Run Tests
 ```sh
 truffle test
 ```
+
+[Documentation](docs/VestingSchedule.md)
 
 ---
 
@@ -73,7 +75,7 @@ The supported withdrawal frequencies are:
 - Half Monthly (15 days)
 - Monthly (30 days)
 - Quarterly (91 days)
-- Half Yearly (182)
+- Half Yearly (182 days)
 
 
 ## Features
