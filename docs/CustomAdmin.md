@@ -13,25 +13,19 @@
 Validates if the sender is actually an administrator.
 
 ```js
-
 modifier onlyAdmin () internal
-
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
-
 | ------------- |------------- | -----|
 
 ## Functions
 
 - [addAdmin](#addadmin)
-
 - [addManyAdmins](#addmanyadmins)
-
 - [removeAdmin](#removeadmin)
-
 - [removeManyAdmins](#removemanyadmins)
 
 ### addAdmin
@@ -39,17 +33,13 @@ modifier onlyAdmin () internal
 Adds the specified address to the list of administrators.
 
 ```js
-
 function addAdmin(address _address) external
-
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
-
 | ------------- |------------- | -----|
-
 | _address | address | The address to add to the administrator list. | 
 
 ### addManyAdmins
@@ -57,17 +47,13 @@ function addAdmin(address _address) external
 Adds multiple addresses to the administrator list.
 
 ```js
-
 function addManyAdmins(address[] _accounts) external
-
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
-
 | ------------- |------------- | -----|
-
 | _accounts | address[] | The wallet addresses to add to the administrator list. | 
 
 ### removeAdmin
@@ -75,17 +61,13 @@ function addManyAdmins(address[] _accounts) external
 Removes the specified address from the list of administrators.
 
 ```js
-
 function removeAdmin(address _address) external
-
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
-
 | ------------- |------------- | -----|
-
 | _address | address | The address to remove from the administrator list. | 
 
 ### removeManyAdmins
@@ -93,43 +75,27 @@ function removeAdmin(address _address) external
 Removes multiple addresses to the administrator list.
 
 ```js
-
 function removeManyAdmins(address[] _accounts) external
-
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
-
 | ------------- |------------- | -----|
-
 | _accounts | address[] | The wallet addresses to add to the administrator list. | 
 
 ## Contracts
 
 - [ERC20Basic](ERC20Basic.md)
-
 - [VestingSchedule](VestingSchedule.md)
-
 - [SafeMath](SafeMath.md)
-
 - [BasicToken](BasicToken.md)
-
 - [StandardToken](StandardToken.md)
-
 - [CustomPausable](CustomPausable.md)
-
 - [VestingScheduleBase](VestingScheduleBase.md)
-
 - [CustomAdmin](CustomAdmin.md)
-
 - [Migrations](Migrations.md)
-
 - [StandardTokenMock](StandardTokenMock.md)
-
 - [FrequencyHelper](FrequencyHelper.md)
-
 - [Ownable](Ownable.md)
-
 - [ERC20](ERC20.md)
