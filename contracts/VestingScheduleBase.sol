@@ -11,7 +11,7 @@ import './CustomPausable.sol';
 contract VestingScheduleBase is CustomPausable {
     using SafeMath for uint256;
 
-    ///@notice Token allocation structure for vesting schedule.
+    ///@dev Token allocation structure for vesting schedule.
     struct Allocation {
         string  memberName;
         uint256 startedOn;

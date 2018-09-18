@@ -33,7 +33,7 @@ constructor(uint256 _minPeriod, uint256 _withdrawalCap, ERC20 _vestingCoin) publ
 Signifies if the sender has enough balances to withdraw the desired amount of the vesting coin.
 
 ```js
-modifier canWithdraw (uint256 _amount) internal
+modifier canWithdraw(uint256 _amount) internal
 ```
 
 **Arguments**
@@ -63,7 +63,12 @@ Please note that this action is restricted to administrators only.
 
 ```js
 function fund() external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the funding was successful.
 
 **Arguments**
 
@@ -78,7 +83,12 @@ and you may only withdraw amounts above the sum total allocation balances.
 
 ```js
 function removeFunds(uint256 _amount) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the withdrawal was successful.
 
 **Arguments**
 
@@ -94,7 +104,12 @@ Please note that this action can only be performed by an administrator.
 
 ```js
 function createAllocation(address _address, string _memberName, uint256 _amount, uint256 _releaseOn) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the vesting schedule allocation was successfully created.
 
 **Arguments**
 
@@ -112,7 +127,12 @@ Please note that this action can only be performed by an administrator.
 
 ```js
 function deleteAllocation(address _address) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the vesting schedule allocation was successfully deleted.
 
 **Arguments**
 
@@ -127,7 +147,12 @@ Please note that this action can only be performed by an administrator.
 
 ```js
 function increaseAllocation(address _address, uint256 _additionalAmount) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the vesting schedule allocation was successfully increased.
 
 **Arguments**
 
@@ -143,7 +168,12 @@ Please note that this action can only be performed by an administrator.
 
 ```js
 function decreaseAllocation(address _address, uint256 _lessAmount) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the vesting schedule allocation was successfully decreased.
 
 **Arguments**
 
@@ -159,7 +189,12 @@ Please note that this action can only be performed by an administrator.
 
 ```js
 function extendAllocation(address _address, uint256 _newReleaseDate) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the vesting schedule allocation was successfully extended.
 
 **Arguments**
 
@@ -174,7 +209,12 @@ Gets the drawing power of the beneficiary.
 
 ```js
 function getDrawingPower(address _address) public
+returns(uint256)
 ```
+
+**Returns**
+
+Returns the amount in vesting coin that can be withdrawn.
 
 **Arguments**
 
@@ -188,6 +228,7 @@ This action enables the beneficiaries to withdraw a desired amount from this con
 
 ```js
 function withdraw(uint256 _amount) external
+returns(bool)
 ```
 
 **Arguments**

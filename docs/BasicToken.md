@@ -6,6 +6,14 @@
 
 Basic version of StandardToken, with no allowances.
 
+## Contract Members
+**Constants & Variables**
+
+```js
+mapping(address => uint256) internal balances;
+uint256 internal totalSupply_;
+```
+
 ## Functions
 
 - [totalSupply](#totalsupply)
@@ -18,6 +26,7 @@ Total number of tokens in existence
 
 ```js
 function totalSupply() public
+returns(uint256)
 ```
 
 **Arguments**
@@ -31,6 +40,7 @@ Transfer token for a specified address
 
 ```js
 function transfer(address _to, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**
@@ -46,7 +56,12 @@ Gets the balance of the specified address.
 
 ```js
 function balanceOf(address _owner) public
+returns(uint256)
 ```
+
+**Returns**
+
+An uint256 representing the amount owned by the passed address.
 
 **Arguments**
 

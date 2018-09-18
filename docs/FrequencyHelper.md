@@ -2,6 +2,21 @@
 
 **FrequencyHelper**
 
+## Enums
+### Frequency
+
+```js
+enum Frequency {
+ Daily,
+ Weekly,
+ HalfMonthly,
+ Monthly,
+ Quarterly,
+ HalfYearly,
+ Yearly
+}
+```
+
 ## Functions
 
 - [convertFrequency](#convertfrequency)
@@ -10,6 +25,7 @@
 
 ```js
 function convertFrequency(enum FrequencyHelper.Frequency _frequency) internal
+returns(uint256)
 ```
 
 **Arguments**

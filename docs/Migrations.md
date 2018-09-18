@@ -2,6 +2,14 @@
 
 **Migrations**
 
+## Contract Members
+**Constants & Variables**
+
+```js
+address public owner;
+uint256 public last_completed_migration;
+```
+
 ## Modifiers
 
 - [restricted](#restricted)
@@ -9,7 +17,7 @@
 ### restricted
 
 ```js
-modifier restricted () internal
+modifier restricted() internal
 ```
 
 **Arguments**
@@ -26,6 +34,7 @@ modifier restricted () internal
 
 ```js
 function setCompleted(uint256 completed) public
+
 ```
 
 **Arguments**
@@ -38,6 +47,7 @@ function setCompleted(uint256 completed) public
 
 ```js
 function upgrade(address new_address) public
+
 ```
 
 **Arguments**

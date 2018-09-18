@@ -5,6 +5,13 @@
 Simpler version of ERC20 interface
 See https://github.com/ethereum/EIPs/issues/179
 
+**Events**
+
+```js
+event Transfer(address from, address to, uint256 value);
+
+```
+
 ## Functions
 
 - [totalSupply](#totalsupply)
@@ -15,6 +22,7 @@ See https://github.com/ethereum/EIPs/issues/179
 
 ```js
 function totalSupply() public
+returns(uint256)
 ```
 
 **Arguments**
@@ -26,6 +34,7 @@ function totalSupply() public
 
 ```js
 function balanceOf(address _who) public
+returns(uint256)
 ```
 
 **Arguments**
@@ -38,6 +47,7 @@ function balanceOf(address _who) public
 
 ```js
 function transfer(address _to, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**

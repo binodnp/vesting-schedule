@@ -4,6 +4,21 @@
 
 **CustomAdmin**
 
+## Contract Members
+**Constants & Variables**
+
+```js
+mapping(address => bool) public admins;
+```
+
+**Events**
+
+```js
+event AdminAdded(address _address);
+event AdminRemoved(address _address);
+
+```
+
 ## Modifiers
 
 - [onlyAdmin](#onlyadmin)
@@ -13,7 +28,7 @@
 Validates if the sender is actually an administrator.
 
 ```js
-modifier onlyAdmin () internal
+modifier onlyAdmin() internal
 ```
 
 **Arguments**
@@ -34,6 +49,7 @@ Adds the specified address to the list of administrators.
 
 ```js
 function addAdmin(address _address) external
+
 ```
 
 **Arguments**
@@ -48,6 +64,7 @@ Adds multiple addresses to the administrator list.
 
 ```js
 function addManyAdmins(address[] _accounts) external
+
 ```
 
 **Arguments**
@@ -62,6 +79,7 @@ Removes the specified address from the list of administrators.
 
 ```js
 function removeAdmin(address _address) external
+
 ```
 
 **Arguments**
@@ -76,6 +94,7 @@ Removes multiple addresses to the administrator list.
 
 ```js
 function removeManyAdmins(address[] _accounts) external
+
 ```
 
 **Arguments**

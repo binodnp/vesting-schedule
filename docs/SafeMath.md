@@ -15,6 +15,7 @@ Multiplies two numbers, throws on overflow.
 
 ```js
 function mul(uint256 _a, uint256 _b) internal
+returns(c uint256)
 ```
 
 **Arguments**
@@ -30,6 +31,7 @@ Integer division of two numbers, truncating the quotient.
 
 ```js
 function div(uint256 _a, uint256 _b) internal
+returns(uint256)
 ```
 
 **Arguments**
@@ -45,6 +47,7 @@ Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than mi
 
 ```js
 function sub(uint256 _a, uint256 _b) internal
+returns(uint256)
 ```
 
 **Arguments**
@@ -60,6 +63,7 @@ Adds two numbers, throws on overflow.
 
 ```js
 function add(uint256 _a, uint256 _b) internal
+returns(c uint256)
 ```
 
 **Arguments**

@@ -8,6 +8,53 @@ Vesting Schedule indicates when, how much, and how frequently
 founders, employees, and advisor can exercise their token allocations.
 Vesting is determined for each individual.
 
+## Structs
+### Allocation
+
+```js
+struct Allocation {
+  string memberName,
+  uint256 startedOn,
+  uint256 releaseOn,
+  uint256 allocation,
+  uint256 closingBalance,
+  bool deleted,
+  uint256 withdrawn,
+  uint256 lastWithdrawnOn
+}
+```
+
+## Contract Members
+**Constants & Variables**
+
+```js
+//public members
+uint256 public withdrawalCap;
+uint256 public withdrawalFrequency;
+uint256 public vestingStartedOn;
+uint256 public minimumVestingPeriod;
+uint256 public earliestWithdrawalDate;
+uint256 public totalVested;
+uint256 public totalWithdrawn;
+contract ERC20 public vestingCoin;
+//internal members
+mapping(address => struct VestingScheduleBase.Allocation) internal allocations;
+```
+
+**Events**
+
+```js
+event Funded(address _funder, uint256 _amount, uint256 _previousCap, uint256 _newCap);
+event FundRemoved(address _address, uint256 _amount, uint256 _remainingInPool);
+event Withdrawn(address _address, string _memberName, uint256 _amount);
+event AllocationCreated(address _address, string _memberName, uint256 _amount, uint256 _releaseOn);
+event AllocationIncreased(address _address, string _memberName, uint256 _amount, uint256 _additionalAmount);
+event AllocationDecreased(address _address, string _memberName, uint256 _amount, uint256 _lessAmount);
+event AllocationDeleted(address _address, string _memberName, uint256 _amount);
+event ScheduleExtended(address _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
+
+```
+
 ## Modifiers
 
 - [afterEarliestWithdrawalDate](#afterearliestwithdrawaldate)
@@ -18,7 +65,7 @@ Signifies that the action is only possible
 after the earliest withdrawal date of the vesting contract.
 
 ```js
-modifier afterEarliestWithdrawalDate () internal
+modifier afterEarliestWithdrawalDate() internal
 ```
 
 **Arguments**
@@ -44,6 +91,7 @@ modifier afterEarliestWithdrawalDate () internal
 
 ```js
 function createAllocation(address _address, string _memberName, uint256 _amount, uint256 _releaseOn) external
+returns(bool)
 ```
 
 **Arguments**
@@ -59,6 +107,7 @@ function createAllocation(address _address, string _memberName, uint256 _amount,
 
 ```js
 function deleteAllocation(address _address) external
+returns(bool)
 ```
 
 **Arguments**
@@ -71,6 +120,7 @@ function deleteAllocation(address _address) external
 
 ```js
 function increaseAllocation(address _address, uint256 _additionalAmount) external
+returns(bool)
 ```
 
 **Arguments**
@@ -84,6 +134,7 @@ function increaseAllocation(address _address, uint256 _additionalAmount) externa
 
 ```js
 function decreaseAllocation(address _address, uint256 _lessAmount) external
+returns(bool)
 ```
 
 **Arguments**
@@ -97,6 +148,7 @@ function decreaseAllocation(address _address, uint256 _lessAmount) external
 
 ```js
 function extendAllocation(address _address, uint256 _newReleaseDate) external
+returns(bool)
 ```
 
 **Arguments**
@@ -110,6 +162,7 @@ function extendAllocation(address _address, uint256 _newReleaseDate) external
 
 ```js
 function withdraw(uint256 _amount) external
+returns(bool)
 ```
 
 **Arguments**
@@ -124,7 +177,12 @@ The balance of this smart contract.
 
 ```js
 function getAvailableFunds() public
+returns(uint256)
 ```
+
+**Returns**
+
+Returns the closing balance of vesting coin held by this contract.
 
 **Arguments**
 
@@ -137,7 +195,12 @@ The sum total amount in vesting allocations.
 
 ```js
 function getAmountInVesting() public
+returns(uint256)
 ```
+
+**Returns**
+
+Returns the amount in vesting coin that must be held by this contract.
 
 **Arguments**
 
@@ -150,7 +213,12 @@ The vesting schedule allocation of the specified address.
 
 ```js
 function getAllocation(address _address) external
+returns(_startedOn uint256, _memberName string, _releaseOn uint256, _allocation uint256, _closingBalance uint256, _withdrawn uint256, _lastWithdrawnOn uint256, _deleted bool)
 ```
+
+**Returns**
+
+Returns the requested vesting schedule allocation.
 
 **Arguments**
 
@@ -164,7 +232,12 @@ Override this function to receive the vesting coin in this contract.
 
 ```js
 function fund() external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the action was successful.
 
 **Arguments**
 
@@ -177,7 +250,12 @@ Override this function to remove the vesting coin from this contract.
 
 ```js
 function removeFunds(uint256 _amount) external
+returns(bool)
 ```
+
+**Returns**
+
+Returns true if the action was successful.
 
 **Arguments**
 

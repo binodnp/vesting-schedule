@@ -4,6 +4,21 @@
 
 **CustomPausable**
 
+## Contract Members
+**Constants & Variables**
+
+```js
+bool public paused;
+```
+
+**Events**
+
+```js
+event Pause();
+event Unpause();
+
+```
+
 ## Modifiers
 
 - [whenNotPaused](#whennotpaused)
@@ -14,7 +29,7 @@
 Verifies whether the contract is not paused.
 
 ```js
-modifier whenNotPaused () internal
+modifier whenNotPaused() internal
 ```
 
 **Arguments**
@@ -27,7 +42,7 @@ modifier whenNotPaused () internal
 Verifies whether the contract is paused.
 
 ```js
-modifier whenPaused () internal
+modifier whenPaused() internal
 ```
 
 **Arguments**
@@ -46,6 +61,7 @@ Pauses the contract.
 
 ```js
 function pause() external
+
 ```
 
 **Arguments**
@@ -59,6 +75,7 @@ Unpauses the contract and returns to normal state.
 
 ```js
 function unpause() external
+
 ```
 
 **Arguments**

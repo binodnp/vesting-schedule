@@ -6,6 +6,13 @@
 
 see https://github.com/ethereum/EIPs/issues/20
 
+**Events**
+
+```js
+event Approval(address owner, address spender, uint256 value);
+
+```
+
 ## Functions
 
 - [allowance](#allowance)
@@ -16,6 +23,7 @@ see https://github.com/ethereum/EIPs/issues/20
 
 ```js
 function allowance(address _owner, address _spender) public
+returns(uint256)
 ```
 
 **Arguments**
@@ -29,6 +37,7 @@ function allowance(address _owner, address _spender) public
 
 ```js
 function transferFrom(address _from, address _to, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**
@@ -43,6 +52,7 @@ function transferFrom(address _from, address _to, uint256 _value) public
 
 ```js
 function approve(address _spender, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**

@@ -8,6 +8,13 @@ Implementation of the basic standard token.
 https://github.com/ethereum/EIPs/issues/20
 Based on code by FirstBlood: https://github.com/Firstbloodio/token/blob/master/smart_contract/FirstBloodToken.sol
 
+## Contract Members
+**Constants & Variables**
+
+```js
+mapping(address => mapping(address => uint256)) internal allowed;
+```
+
 ## Functions
 
 - [transferFrom](#transferfrom)
@@ -22,6 +29,7 @@ Transfer tokens from one address to another
 
 ```js
 function transferFrom(address _from, address _to, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**
@@ -42,6 +50,7 @@ https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
 
 ```js
 function approve(address _spender, uint256 _value) public
+returns(bool)
 ```
 
 **Arguments**
@@ -57,7 +66,12 @@ Function to check the amount of tokens that an owner allowed to a spender.
 
 ```js
 function allowance(address _owner, address _spender) public
+returns(uint256)
 ```
+
+**Returns**
+
+A uint256 specifying the amount of tokens still available for the spender.
 
 **Arguments**
 
@@ -76,6 +90,7 @@ From MonolithDAO Token.sol
 
 ```js
 function increaseApproval(address _spender, uint256 _addedValue) public
+returns(bool)
 ```
 
 **Arguments**
@@ -95,6 +110,7 @@ From MonolithDAO Token.sol
 
 ```js
 function decreaseApproval(address _spender, uint256 _subtractedValue) public
+returns(bool)
 ```
 
 **Arguments**

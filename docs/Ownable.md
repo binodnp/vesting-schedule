@@ -5,6 +5,21 @@
 The Ownable contract has an owner address, and provides basic authorization control
 functions, this simplifies the implementation of "user permissions".
 
+## Contract Members
+**Constants & Variables**
+
+```js
+address public owner;
+```
+
+**Events**
+
+```js
+event OwnershipRenounced(address previousOwner);
+event OwnershipTransferred(address previousOwner, address newOwner);
+
+```
+
 ## Modifiers
 
 - [onlyOwner](#onlyowner)
@@ -14,7 +29,7 @@ functions, this simplifies the implementation of "user permissions".
 Throws if called by any account other than the owner.
 
 ```js
-modifier onlyOwner () internal
+modifier onlyOwner() internal
 ```
 
 **Arguments**
@@ -36,6 +51,7 @@ modifier anymore.
 
 ```js
 function renounceOwnership() public
+
 ```
 
 **Arguments**
@@ -49,6 +65,7 @@ Allows the current owner to transfer control of the contract to a newOwner.
 
 ```js
 function transferOwnership(address _newOwner) public
+
 ```
 
 **Arguments**
@@ -63,6 +80,7 @@ Transfers control of the contract to a newOwner.
 
 ```js
 function _transferOwnership(address _newOwner) internal
+
 ```
 
 **Arguments**
