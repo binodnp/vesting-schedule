@@ -24,7 +24,7 @@ enum Frequency {
 ### convertFrequency
 
 ```js
-function convertFrequency(enum FrequencyHelper.Frequency _frequency) internal
+function convertFrequency(enum FrequencyHelper.Frequency _frequency) internal pure
 returns(uint256)
 ```
 

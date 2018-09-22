@@ -9,8 +9,7 @@ see https://github.com/ethereum/EIPs/issues/20
 **Events**
 
 ```js
-event Approval(address owner, address spender, uint256 value);
-
+event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
 ## Functions
@@ -22,7 +21,7 @@ event Approval(address owner, address spender, uint256 value);
 ### allowance
 
 ```js
-function allowance(address _owner, address _spender) public
+function allowance(address _owner, address _spender) public view
 returns(uint256)
 ```
 

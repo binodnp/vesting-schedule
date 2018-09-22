@@ -14,7 +14,7 @@
 Multiplies two numbers, throws on overflow.
 
 ```js
-function mul(uint256 _a, uint256 _b) internal
+function mul(uint256 _a, uint256 _b) internal pure
 returns(c uint256)
 ```
 
@@ -30,7 +30,7 @@ returns(c uint256)
 Integer division of two numbers, truncating the quotient.
 
 ```js
-function div(uint256 _a, uint256 _b) internal
+function div(uint256 _a, uint256 _b) internal pure
 returns(uint256)
 ```
 
@@ -46,7 +46,7 @@ returns(uint256)
 Subtracts two numbers, throws on overflow (i.e. if subtrahend is greater than minuend).
 
 ```js
-function sub(uint256 _a, uint256 _b) internal
+function sub(uint256 _a, uint256 _b) internal pure
 returns(uint256)
 ```
 
@@ -62,7 +62,7 @@ returns(uint256)
 Adds two numbers, throws on overflow.
 
 ```js
-function add(uint256 _a, uint256 _b) internal
+function add(uint256 _a, uint256 _b) internal pure
 returns(c uint256)
 ```
 

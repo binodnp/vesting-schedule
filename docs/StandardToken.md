@@ -25,6 +25,8 @@ mapping(address => mapping(address => uint256)) internal allowed;
 
 ### transferFrom
 
+:small_red_triangle: overrides [ERC20Basic.transferFrom](#ERC20Basic#transferfrom)
+
 Transfer tokens from one address to another
 
 ```js
@@ -41,6 +43,8 @@ returns(bool)
 | _value | uint256 | uint256 the amount of tokens to be transferred | 
 
 ### approve
+
+:small_red_triangle: overrides [ERC20Basic.approve](#ERC20Basic#approve)
 
 Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
 Beware that changing an allowance with this method brings the risk that someone may use both the old
@@ -62,10 +66,12 @@ returns(bool)
 
 ### allowance
 
+:small_red_triangle: overrides [ERC20Basic.allowance](#ERC20Basic#allowance)
+
 Function to check the amount of tokens that an owner allowed to a spender.
 
 ```js
-function allowance(address _owner, address _spender) public
+function allowance(address _owner, address _spender) public view
 returns(uint256)
 ```
 

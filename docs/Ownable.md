@@ -15,9 +15,8 @@ address public owner;
 **Events**
 
 ```js
-event OwnershipRenounced(address previousOwner);
-event OwnershipTransferred(address previousOwner, address newOwner);
-
+event OwnershipRenounced(address indexed previousOwner);
+event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
 ```
 
 ## Modifiers
@@ -50,22 +49,15 @@ It will not be possible to call the functions with the `onlyOwner`
 modifier anymore.
 
 ```js
-function renounceOwnership() public
-
+function renounceOwnership() public onlyOwner
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### transferOwnership
 
 Allows the current owner to transfer control of the contract to a newOwner.
 
 ```js
-function transferOwnership(address _newOwner) public
-
+function transferOwnership(address _newOwner) public onlyOwner
 ```
 
 **Arguments**
@@ -80,7 +72,6 @@ Transfers control of the contract to a newOwner.
 
 ```js
 function _transferOwnership(address _newOwner) internal
-
 ```
 
 **Arguments**

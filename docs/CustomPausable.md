@@ -16,7 +16,6 @@ bool public paused;
 ```js
 event Pause();
 event Unpause();
-
 ```
 
 ## Modifiers
@@ -60,28 +59,16 @@ modifier whenPaused() internal
 Pauses the contract.
 
 ```js
-function pause() external
-
+function pause() external onlyAdmin whenNotPaused
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### unpause
 
 Unpauses the contract and returns to normal state.
 
 ```js
-function unpause() external
-
+function unpause() external onlyAdmin whenPaused
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ## Contracts
 

@@ -56,13 +56,15 @@ modifier canWithdraw(uint256 _amount) internal
 
 ### fund
 
+:small_red_triangle: overrides [ERC20Basic.fund](#ERC20Basic#fund)
+
 Enables this vesting schedule contract to receive the ERC20 (vesting coin).
 Before calling this function please approve your desired amount of the coin
 for this smart contract address.
 Please note that this action is restricted to administrators only.
 
 ```js
-function fund() external
+function fund() external onlyAdmin
 returns(bool)
 ```
 
@@ -70,19 +72,16 @@ returns(bool)
 
 Returns true if the funding was successful.
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### removeFunds
+
+:small_red_triangle: overrides [ERC20Basic.removeFunds](#ERC20Basic#removefunds)
 
 Allows you to withdraw the surplus balance of the vesting coin from this contract.
 Please note that this action is restricted to administrators only
 and you may only withdraw amounts above the sum total allocation balances.
 
 ```js
-function removeFunds(uint256 _amount) external
+function removeFunds(uint256 _amount) external onlyAdmin
 returns(bool)
 ```
 
@@ -98,12 +97,14 @@ Returns true if the withdrawal was successful.
 
 ### createAllocation
 
+:small_red_triangle: overrides [ERC20Basic.createAllocation](#ERC20Basic#createallocation)
+
 Creates a vesting schedule allocation for a new beneficiary.
 A beneficiary could mean founders, employees, or advisors.
 Please note that this action can only be performed by an administrator.
 
 ```js
-function createAllocation(address _address, string _memberName, uint256 _amount, uint256 _releaseOn) external
+function createAllocation(address _address, string _memberName, uint256 _amount, uint256 _releaseOn) external onlyAdmin
 returns(bool)
 ```
 
@@ -122,11 +123,13 @@ Returns true if the vesting schedule allocation was successfully created.
 
 ### deleteAllocation
 
+:small_red_triangle: overrides [ERC20Basic.deleteAllocation](#ERC20Basic#deleteallocation)
+
 Deletes the specified vesting schedule allocation.
 Please note that this action can only be performed by an administrator.
 
 ```js
-function deleteAllocation(address _address) external
+function deleteAllocation(address _address) external onlyAdmin
 returns(bool)
 ```
 
@@ -142,11 +145,13 @@ Returns true if the vesting schedule allocation was successfully deleted.
 
 ### increaseAllocation
 
+:small_red_triangle: overrides [ERC20Basic.increaseAllocation](#ERC20Basic#increaseallocation)
+
 Increases the total allocation of the specified vesting schedule.
 Please note that this action can only be performed by an administrator.
 
 ```js
-function increaseAllocation(address _address, uint256 _additionalAmount) external
+function increaseAllocation(address _address, uint256 _additionalAmount) external onlyAdmin
 returns(bool)
 ```
 
@@ -163,11 +168,13 @@ Returns true if the vesting schedule allocation was successfully increased.
 
 ### decreaseAllocation
 
+:small_red_triangle: overrides [ERC20Basic.decreaseAllocation](#ERC20Basic#decreaseallocation)
+
 Decreases the total allocation of the specified vesting schedule.
 Please note that this action can only be performed by an administrator.
 
 ```js
-function decreaseAllocation(address _address, uint256 _lessAmount) external
+function decreaseAllocation(address _address, uint256 _lessAmount) external onlyAdmin
 returns(bool)
 ```
 
@@ -184,11 +191,13 @@ Returns true if the vesting schedule allocation was successfully decreased.
 
 ### extendAllocation
 
+:small_red_triangle: overrides [ERC20Basic.extendAllocation](#ERC20Basic#extendallocation)
+
 Extends the release date of the specified vesting schedule allocation.
 Please note that this action can only be performed by an administrator.
 
 ```js
-function extendAllocation(address _address, uint256 _newReleaseDate) external
+function extendAllocation(address _address, uint256 _newReleaseDate) external onlyAdmin
 returns(bool)
 ```
 
@@ -208,7 +217,7 @@ Returns true if the vesting schedule allocation was successfully extended.
 Gets the drawing power of the beneficiary.
 
 ```js
-function getDrawingPower(address _address) public
+function getDrawingPower(address _address) public view
 returns(uint256)
 ```
 
@@ -224,10 +233,12 @@ Returns the amount in vesting coin that can be withdrawn.
 
 ### withdraw
 
+:small_red_triangle: overrides [ERC20Basic.withdraw](#ERC20Basic#withdraw)
+
 This action enables the beneficiaries to withdraw a desired amount from this contract.
 
 ```js
-function withdraw(uint256 _amount) external
+function withdraw(uint256 _amount) external canWithdraw afterEarliestWithdrawalDate whenNotPaused
 returns(bool)
 ```
 

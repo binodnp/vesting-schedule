@@ -32,7 +32,7 @@ contract CustomAdmin is Ownable {
     _;
   }
 
-  ///@notice Adds the specified address to the list of administrators.
+  ///@notice Adds the specified address to the administrator list.
   ///@param _address The address to add to the administrator list.
   function addAdmin(address _address) external onlyAdmin {
     require(_address != address(0));
@@ -63,7 +63,7 @@ contract CustomAdmin is Ownable {
     }
   }
   
-  ///@notice Removes the specified address from the list of administrators.
+  ///@notice Removes the specified address from the administrator list.
   ///@param _address The address to remove from the administrator list.
   function removeAdmin(address _address) external onlyAdmin {
     require(_address != address(0));
@@ -77,8 +77,8 @@ contract CustomAdmin is Ownable {
   }
 
 
-  ///@notice Removes multiple addresses to the administrator list.
-  ///@param _accounts The wallet addresses to add to the administrator list.
+  ///@notice Removes multiple addresses from the administrator list.
+  ///@param _accounts The wallet addresses to remove from the administrator list.
   function removeManyAdmins(address[] _accounts) external onlyAdmin {
     for(uint8 i=0; i<_accounts.length; i++) {
       address account = _accounts[i];

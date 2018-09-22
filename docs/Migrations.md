@@ -33,8 +33,7 @@ modifier restricted() internal
 ### setCompleted
 
 ```js
-function setCompleted(uint256 completed) public
-
+function setCompleted(uint256 completed) public restricted
 ```
 
 **Arguments**
@@ -46,8 +45,7 @@ function setCompleted(uint256 completed) public
 ### upgrade
 
 ```js
-function upgrade(address new_address) public
-
+function upgrade(address new_address) public restricted
 ```
 
 **Arguments**

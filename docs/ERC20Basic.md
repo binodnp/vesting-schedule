@@ -8,8 +8,7 @@ See https://github.com/ethereum/EIPs/issues/179
 **Events**
 
 ```js
-event Transfer(address from, address to, uint256 value);
-
+event Transfer(address indexed from, address indexed to, uint256 value);
 ```
 
 ## Functions
@@ -21,19 +20,14 @@ event Transfer(address from, address to, uint256 value);
 ### totalSupply
 
 ```js
-function totalSupply() public
+function totalSupply() public view
 returns(uint256)
 ```
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### balanceOf
 
 ```js
-function balanceOf(address _who) public
+function balanceOf(address _who) public view
 returns(uint256)
 ```
 

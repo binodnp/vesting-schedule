@@ -14,9 +14,8 @@ mapping(address => bool) public admins;
 **Events**
 
 ```js
-event AdminAdded(address _address);
-event AdminRemoved(address _address);
-
+event AdminAdded(address indexed _address);
+event AdminRemoved(address indexed _address);
 ```
 
 ## Modifiers
@@ -45,11 +44,10 @@ modifier onlyAdmin() internal
 
 ### addAdmin
 
-Adds the specified address to the list of administrators.
+Adds the specified address to the administrator list.
 
 ```js
-function addAdmin(address _address) external
-
+function addAdmin(address _address) external onlyAdmin
 ```
 
 **Arguments**
@@ -63,8 +61,7 @@ function addAdmin(address _address) external
 Adds multiple addresses to the administrator list.
 
 ```js
-function addManyAdmins(address[] _accounts) external
-
+function addManyAdmins(address[] _accounts) external onlyAdmin
 ```
 
 **Arguments**
@@ -75,11 +72,10 @@ function addManyAdmins(address[] _accounts) external
 
 ### removeAdmin
 
-Removes the specified address from the list of administrators.
+Removes the specified address from the administrator list.
 
 ```js
-function removeAdmin(address _address) external
-
+function removeAdmin(address _address) external onlyAdmin
 ```
 
 **Arguments**
@@ -90,18 +86,17 @@ function removeAdmin(address _address) external
 
 ### removeManyAdmins
 
-Removes multiple addresses to the administrator list.
+Removes multiple addresses from the administrator list.
 
 ```js
-function removeManyAdmins(address[] _accounts) external
-
+function removeManyAdmins(address[] _accounts) external onlyAdmin
 ```
 
 **Arguments**
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _accounts | address[] | The wallet addresses to add to the administrator list. | 
+| _accounts | address[] | The wallet addresses to remove from the administrator list. | 
 
 ## Contracts
 

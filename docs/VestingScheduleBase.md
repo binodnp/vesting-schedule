@@ -52,7 +52,6 @@ event AllocationIncreased(address _address, string _memberName, uint256 _amount,
 event AllocationDecreased(address _address, string _memberName, uint256 _amount, uint256 _lessAmount);
 event AllocationDeleted(address _address, string _memberName, uint256 _amount);
 event ScheduleExtended(address _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
-
 ```
 
 ## Modifiers
@@ -176,7 +175,7 @@ returns(bool)
 The balance of this smart contract.
 
 ```js
-function getAvailableFunds() public
+function getAvailableFunds() public view
 returns(uint256)
 ```
 
@@ -184,17 +183,12 @@ returns(uint256)
 
 Returns the closing balance of vesting coin held by this contract.
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### getAmountInVesting
 
 The sum total amount in vesting allocations.
 
 ```js
-function getAmountInVesting() public
+function getAmountInVesting() public view
 returns(uint256)
 ```
 
@@ -202,17 +196,12 @@ returns(uint256)
 
 Returns the amount in vesting coin that must be held by this contract.
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### getAllocation
 
 The vesting schedule allocation of the specified address.
 
 ```js
-function getAllocation(address _address) external
+function getAllocation(address _address) external view
 returns(_startedOn uint256, _memberName string, _releaseOn uint256, _allocation uint256, _closingBalance uint256, _withdrawn uint256, _lastWithdrawnOn uint256, _deleted bool)
 ```
 
@@ -238,11 +227,6 @@ returns(bool)
 **Returns**
 
 Returns true if the action was successful.
-
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
 
 ### removeFunds
 

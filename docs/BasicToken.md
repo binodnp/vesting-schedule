@@ -22,19 +22,18 @@ uint256 internal totalSupply_;
 
 ### totalSupply
 
+:small_red_triangle: overrides [ERC20Basic.totalSupply](#ERC20Basic#totalsupply)
+
 Total number of tokens in existence
 
 ```js
-function totalSupply() public
+function totalSupply() public view
 returns(uint256)
 ```
 
-**Arguments**
-
-| Name        | Type           | Description  |
-| ------------- |------------- | -----|
-
 ### transfer
+
+:small_red_triangle: overrides [ERC20Basic.transfer](#ERC20Basic#transfer)
 
 Transfer token for a specified address
 
@@ -52,10 +51,12 @@ returns(bool)
 
 ### balanceOf
 
+:small_red_triangle: overrides [ERC20Basic.balanceOf](#ERC20Basic#balanceof)
+
 Gets the balance of the specified address.
 
 ```js
-function balanceOf(address _owner) public
+function balanceOf(address _owner) public view
 returns(uint256)
 ```
 
