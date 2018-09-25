@@ -22,7 +22,7 @@ uint256 internal totalSupply_;
 
 ### totalSupply
 
-:small_red_triangle: overrides [ERC20Basic.totalSupply](#ERC20Basic#totalsupply)
+:small_red_triangle: overrides [ERC20Basic.totalSupply](ERC20Basic.md#totalsupply)
 
 Total number of tokens in existence
 
@@ -33,7 +33,7 @@ returns(uint256)
 
 ### transfer
 
-:small_red_triangle: overrides [ERC20Basic.transfer](#ERC20Basic#transfer)
+:small_red_triangle: overrides [ERC20Basic.transfer](ERC20Basic.md#transfer)
 
 Transfer token for a specified address
 
@@ -51,7 +51,7 @@ returns(bool)
 
 ### balanceOf
 
-:small_red_triangle: overrides [ERC20Basic.balanceOf](#ERC20Basic#balanceof)
+:small_red_triangle: overrides [ERC20Basic.balanceOf](ERC20Basic.md#balanceof)
 
 Gets the balance of the specified address.
 

@@ -25,7 +25,7 @@ mapping(address => mapping(address => uint256)) internal allowed;
 
 ### transferFrom
 
-:small_red_triangle: overrides [ERC20Basic.transferFrom](#ERC20Basic#transferfrom)
+:small_red_triangle: overrides [ERC20.transferFrom](ERC20.md#transferfrom)
 
 Transfer tokens from one address to another
 
@@ -44,7 +44,7 @@ returns(bool)
 
 ### approve
 
-:small_red_triangle: overrides [ERC20Basic.approve](#ERC20Basic#approve)
+:small_red_triangle: overrides [ERC20.approve](ERC20.md#approve)
 
 Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
 Beware that changing an allowance with this method brings the risk that someone may use both the old
@@ -66,7 +66,7 @@ returns(bool)
 
 ### allowance
 
-:small_red_triangle: overrides [ERC20Basic.allowance](#ERC20Basic#allowance)
+:small_red_triangle: overrides [ERC20.allowance](ERC20.md#allowance)
 
 Function to check the amount of tokens that an owner allowed to a spender.
 

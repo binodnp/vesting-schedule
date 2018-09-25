@@ -23,15 +23,15 @@ contract VestingScheduleBase is CustomPausable {
         uint256 lastWithdrawnOn;
     }
     
-    event Funded(address _funder, uint256 _amount, uint256 _previousCap, uint256 _newCap);
-    event FundRemoved(address _address, uint256 _amount, uint256 _remainingInPool);
-    event Withdrawn(address _address, string _memberName, uint256 _amount);
+    event Funded(address indexed _funder, uint256 _amount, uint256 _previousCap, uint256 _newCap);
+    event FundRemoved(address indexed _address, uint256 _amount, uint256 _remainingInPool);
+    event Withdrawn(address indexed _address, string _memberName, uint256 _amount);
 
-    event AllocationCreated(address _address, string _memberName, uint256 _amount, uint256 _releaseOn);
-    event AllocationIncreased(address _address, string _memberName, uint256 _amount, uint256 _additionalAmount);
-    event AllocationDecreased(address _address, string _memberName, uint256 _amount, uint256 _lessAmount);
-    event AllocationDeleted(address _address, string _memberName, uint256 _amount);
-    event ScheduleExtended(address _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
+    event AllocationCreated(address indexed _address, string _memberName, uint256 _amount, uint256 _releaseOn);
+    event AllocationIncreased(address indexed _address, string _memberName, uint256 _amount, uint256 _additionalAmount);
+    event AllocationDecreased(address indexed _address, string _memberName, uint256 _amount, uint256 _lessAmount);
+    event AllocationDeleted(address indexed _address, string _memberName, uint256 _amount);
+    event ScheduleExtended(address indexed _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
 
     ///@notice Maximum amount of tokens that can be withdrawn for the specified frequency.
     ///Zero means that there's no cap;

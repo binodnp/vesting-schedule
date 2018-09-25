@@ -37,6 +37,7 @@ uint256 public earliestWithdrawalDate;
 uint256 public totalVested;
 uint256 public totalWithdrawn;
 contract ERC20 public vestingCoin;
+
 //internal members
 mapping(address => struct VestingScheduleBase.Allocation) internal allocations;
 ```
@@ -44,14 +45,14 @@ mapping(address => struct VestingScheduleBase.Allocation) internal allocations;
 **Events**
 
 ```js
-event Funded(address _funder, uint256 _amount, uint256 _previousCap, uint256 _newCap);
-event FundRemoved(address _address, uint256 _amount, uint256 _remainingInPool);
-event Withdrawn(address _address, string _memberName, uint256 _amount);
-event AllocationCreated(address _address, string _memberName, uint256 _amount, uint256 _releaseOn);
-event AllocationIncreased(address _address, string _memberName, uint256 _amount, uint256 _additionalAmount);
-event AllocationDecreased(address _address, string _memberName, uint256 _amount, uint256 _lessAmount);
-event AllocationDeleted(address _address, string _memberName, uint256 _amount);
-event ScheduleExtended(address _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
+event Funded(address indexed _funder, uint256 _amount, uint256 _previousCap, uint256 _newCap);
+event FundRemoved(address indexed _address, uint256 _amount, uint256 _remainingInPool);
+event Withdrawn(address indexed _address, string _memberName, uint256 _amount);
+event AllocationCreated(address indexed _address, string _memberName, uint256 _amount, uint256 _releaseOn);
+event AllocationIncreased(address indexed _address, string _memberName, uint256 _amount, uint256 _additionalAmount);
+event AllocationDecreased(address indexed _address, string _memberName, uint256 _amount, uint256 _lessAmount);
+event AllocationDeleted(address indexed _address, string _memberName, uint256 _amount);
+event ScheduleExtended(address indexed _address, string _memberName, uint256 _releaseOn, uint256 _newReleaseDate);
 ```
 
 ## Modifiers
