@@ -1,6 +1,7 @@
 ﻿# Standard ERC20 token  * (StandardToken.sol)
 
-**contract StandardToken is [ERC20](ERC20.md), [BasicToken](BasicToken.md)**
+**↗ Extends: [ERC20](ERC20.md), [BasicToken](BasicToken.md)**
+**↘ Derived Contracts: [StandardTokenMock](StandardTokenMock.md)**.
 
 **StandardToken**
 
@@ -25,7 +26,7 @@ mapping(address => mapping(address => uint256)) internal allowed;
 
 ### transferFrom
 
-:small_red_triangle: overrides [ERC20.transferFrom](ERC20.md#transferfrom)
+⤾ overrides [ERC20.transferFrom](ERC20.md#transferfrom)
 
 Transfer tokens from one address to another
 
@@ -44,7 +45,7 @@ returns(bool)
 
 ### approve
 
-:small_red_triangle: overrides [ERC20.approve](ERC20.md#approve)
+⤾ overrides [ERC20.approve](ERC20.md#approve)
 
 Approve the passed address to spend the specified amount of tokens on behalf of msg.sender.
 Beware that changing an allowance with this method brings the risk that someone may use both the old
@@ -66,7 +67,7 @@ returns(bool)
 
 ### allowance
 
-:small_red_triangle: overrides [ERC20.allowance](ERC20.md#allowance)
+⤾ overrides [ERC20.allowance](ERC20.md#allowance)
 
 Function to check the amount of tokens that an owner allowed to a spender.
 

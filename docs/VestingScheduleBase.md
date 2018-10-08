@@ -1,6 +1,7 @@
 ﻿# Vesting Schedule Base Contract (VestingScheduleBase.sol)
 
-**contract VestingScheduleBase is [CustomPausable](CustomPausable.md)**
+**↗ Extends: [CustomPausable](CustomPausable.md)**
+**↘ Derived Contracts: [VestingSchedule](VestingSchedule.md)**.
 
 **VestingScheduleBase**
 
@@ -89,6 +90,8 @@ modifier afterEarliestWithdrawalDate() internal
 
 ### createAllocation
 
+⤿ Overridden Implementation(s): [VestingSchedule.createAllocation](VestingSchedule.md#createallocation)
+
 ```js
 function createAllocation(address _address, string _memberName, uint256 _amount, uint256 _releaseOn) external
 returns(bool)
@@ -105,6 +108,8 @@ returns(bool)
 
 ### deleteAllocation
 
+⤿ Overridden Implementation(s): [VestingSchedule.deleteAllocation](VestingSchedule.md#deleteallocation)
+
 ```js
 function deleteAllocation(address _address) external
 returns(bool)
@@ -117,6 +122,8 @@ returns(bool)
 | _address | address |  | 
 
 ### increaseAllocation
+
+⤿ Overridden Implementation(s): [VestingSchedule.increaseAllocation](VestingSchedule.md#increaseallocation)
 
 ```js
 function increaseAllocation(address _address, uint256 _additionalAmount) external
@@ -132,6 +139,8 @@ returns(bool)
 
 ### decreaseAllocation
 
+⤿ Overridden Implementation(s): [VestingSchedule.decreaseAllocation](VestingSchedule.md#decreaseallocation)
+
 ```js
 function decreaseAllocation(address _address, uint256 _lessAmount) external
 returns(bool)
@@ -146,6 +155,8 @@ returns(bool)
 
 ### extendAllocation
 
+⤿ Overridden Implementation(s): [VestingSchedule.extendAllocation](VestingSchedule.md#extendallocation)
+
 ```js
 function extendAllocation(address _address, uint256 _newReleaseDate) external
 returns(bool)
@@ -159,6 +170,8 @@ returns(bool)
 | _newReleaseDate | uint256 |  | 
 
 ### withdraw
+
+⤿ Overridden Implementation(s): [VestingSchedule.withdraw](VestingSchedule.md#withdraw)
 
 ```js
 function withdraw(uint256 _amount) external
@@ -218,6 +231,8 @@ Returns the requested vesting schedule allocation.
 
 ### fund
 
+⤿ Overridden Implementation(s): [VestingSchedule.fund](VestingSchedule.md#fund)
+
 Override this function to receive the vesting coin in this contract.
 
 ```js
@@ -230,6 +245,8 @@ returns(bool)
 Returns true if the action was successful.
 
 ### removeFunds
+
+⤿ Overridden Implementation(s): [VestingSchedule.removeFunds](VestingSchedule.md#removefunds)
 
 Override this function to remove the vesting coin from this contract.
 

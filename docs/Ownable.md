@@ -1,5 +1,7 @@
 ﻿# Ownable (Ownable.sol)
 
+**↘ Derived Contracts: [CustomAdmin](CustomAdmin.md)**.
+
 **Ownable**
 
 The Ownable contract has an owner address, and provides basic authorization control

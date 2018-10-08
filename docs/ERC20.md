@@ -1,6 +1,7 @@
 ﻿# ERC20 interface (ERC20.sol)
 
-**contract ERC20 is [ERC20Basic](ERC20Basic.md)**
+**↗ Extends: [ERC20Basic](ERC20Basic.md)**
+**↘ Derived Contracts: [StandardToken](StandardToken.md)**.
 
 **ERC20**
 
@@ -20,6 +21,8 @@ event Approval(address indexed owner, address indexed spender, uint256 value);
 
 ### allowance
 
+⤿ Overridden Implementation(s): [StandardToken.allowance](StandardToken.md#allowance)
+
 ```js
 function allowance(address _owner, address _spender) public view
 returns(uint256)
@@ -33,6 +36,8 @@ returns(uint256)
 | _spender | address |  | 
 
 ### transferFrom
+
+⤿ Overridden Implementation(s): [StandardToken.transferFrom](StandardToken.md#transferfrom)
 
 ```js
 function transferFrom(address _from, address _to, uint256 _value) public
@@ -48,6 +53,8 @@ returns(bool)
 | _value | uint256 |  | 
 
 ### approve
+
+⤿ Overridden Implementation(s): [StandardToken.approve](StandardToken.md#approve)
 
 ```js
 function approve(address _spender, uint256 _value) public

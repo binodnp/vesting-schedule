@@ -1,6 +1,6 @@
 ﻿# StandardTokenMock.sol
 
-**contract StandardTokenMock is [StandardToken](StandardToken.md)**
+**↗ Extends: [StandardToken](StandardToken.md)**
 
 **StandardTokenMock**
 

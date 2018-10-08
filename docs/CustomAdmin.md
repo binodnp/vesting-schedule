@@ -1,6 +1,7 @@
 ﻿# This contract enables to create multiple contract administrators. (CustomAdmin.sol)
 
-**contract CustomAdmin is [Ownable](Ownable.md)**
+**↗ Extends: [Ownable](Ownable.md)**
+**↘ Derived Contracts: [CustomPausable](CustomPausable.md)**.
 
 **CustomAdmin**
 
@@ -44,7 +45,7 @@ modifier onlyAdmin() internal
 
 ### addAdmin
 
-Adds the specified address to the administrator list.
+Adds the specified address to the list of administrators.
 
 ```js
 function addAdmin(address _address) external onlyAdmin
@@ -72,7 +73,7 @@ function addManyAdmins(address[] _accounts) external onlyAdmin
 
 ### removeAdmin
 
-Removes the specified address from the administrator list.
+Removes the specified address from the list of administrators.
 
 ```js
 function removeAdmin(address _address) external onlyAdmin
@@ -86,7 +87,7 @@ function removeAdmin(address _address) external onlyAdmin
 
 ### removeManyAdmins
 
-Removes multiple addresses from the administrator list.
+Removes multiple addresses to the administrator list.
 
 ```js
 function removeManyAdmins(address[] _accounts) external onlyAdmin
@@ -96,7 +97,7 @@ function removeManyAdmins(address[] _accounts) external onlyAdmin
 
 | Name        | Type           | Description  |
 | ------------- |------------- | -----|
-| _accounts | address[] | The wallet addresses to remove from the administrator list. | 
+| _accounts | address[] | The wallet addresses to add to the administrator list. | 
 
 ## Contracts
 

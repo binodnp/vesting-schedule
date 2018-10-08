@@ -1,6 +1,7 @@
 ﻿# This contract enables you to create pausable mechanism to stop in case of emergency. (CustomPausable.sol)
 
-**contract CustomPausable is [CustomAdmin](CustomAdmin.md)**
+**↗ Extends: [CustomAdmin](CustomAdmin.md)**
+**↘ Derived Contracts: [VestingScheduleBase](VestingScheduleBase.md)**.
 
 **CustomPausable**
 

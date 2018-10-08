@@ -1,6 +1,6 @@
 ﻿# Vesting Schedule Implementation (VestingSchedule.sol)
 
-**contract VestingSchedule is [VestingScheduleBase](VestingScheduleBase.md), [FrequencyHelper](FrequencyHelper.md)**
+**↗ Extends: [VestingScheduleBase](VestingScheduleBase.md), [FrequencyHelper](FrequencyHelper.md)**
 
 **VestingSchedule**
 
@@ -56,7 +56,7 @@ modifier canWithdraw(uint256 _amount) internal
 
 ### fund
 
-:small_red_triangle: overrides [VestingScheduleBase.fund](VestingScheduleBase.md#fund)
+⤾ overrides [VestingScheduleBase.fund](VestingScheduleBase.md#fund)
 
 Enables this vesting schedule contract to receive the ERC20 (vesting coin).
 Before calling this function please approve your desired amount of the coin
@@ -74,7 +74,7 @@ Returns true if the funding was successful.
 
 ### removeFunds
 
-:small_red_triangle: overrides [VestingScheduleBase.removeFunds](VestingScheduleBase.md#removefunds)
+⤾ overrides [VestingScheduleBase.removeFunds](VestingScheduleBase.md#removefunds)
 
 Allows you to withdraw the surplus balance of the vesting coin from this contract.
 Please note that this action is restricted to administrators only
@@ -97,7 +97,7 @@ Returns true if the withdrawal was successful.
 
 ### createAllocation
 
-:small_red_triangle: overrides [VestingScheduleBase.createAllocation](VestingScheduleBase.md#createallocation)
+⤾ overrides [VestingScheduleBase.createAllocation](VestingScheduleBase.md#createallocation)
 
 Creates a vesting schedule allocation for a new beneficiary.
 A beneficiary could mean founders, employees, or advisors.
@@ -123,7 +123,7 @@ Returns true if the vesting schedule allocation was successfully created.
 
 ### deleteAllocation
 
-:small_red_triangle: overrides [VestingScheduleBase.deleteAllocation](VestingScheduleBase.md#deleteallocation)
+⤾ overrides [VestingScheduleBase.deleteAllocation](VestingScheduleBase.md#deleteallocation)
 
 Deletes the specified vesting schedule allocation.
 Please note that this action can only be performed by an administrator.
@@ -145,7 +145,7 @@ Returns true if the vesting schedule allocation was successfully deleted.
 
 ### increaseAllocation
 
-:small_red_triangle: overrides [VestingScheduleBase.increaseAllocation](VestingScheduleBase.md#increaseallocation)
+⤾ overrides [VestingScheduleBase.increaseAllocation](VestingScheduleBase.md#increaseallocation)
 
 Increases the total allocation of the specified vesting schedule.
 Please note that this action can only be performed by an administrator.
@@ -168,7 +168,7 @@ Returns true if the vesting schedule allocation was successfully increased.
 
 ### decreaseAllocation
 
-:small_red_triangle: overrides [VestingScheduleBase.decreaseAllocation](VestingScheduleBase.md#decreaseallocation)
+⤾ overrides [VestingScheduleBase.decreaseAllocation](VestingScheduleBase.md#decreaseallocation)
 
 Decreases the total allocation of the specified vesting schedule.
 Please note that this action can only be performed by an administrator.
@@ -191,7 +191,7 @@ Returns true if the vesting schedule allocation was successfully decreased.
 
 ### extendAllocation
 
-:small_red_triangle: overrides [VestingScheduleBase.extendAllocation](VestingScheduleBase.md#extendallocation)
+⤾ overrides [VestingScheduleBase.extendAllocation](VestingScheduleBase.md#extendallocation)
 
 Extends the release date of the specified vesting schedule allocation.
 Please note that this action can only be performed by an administrator.
@@ -233,7 +233,7 @@ Returns the amount in vesting coin that can be withdrawn.
 
 ### withdraw
 
-:small_red_triangle: overrides [VestingScheduleBase.withdraw](VestingScheduleBase.md#withdraw)
+⤾ overrides [VestingScheduleBase.withdraw](VestingScheduleBase.md#withdraw)
 
 This action enables the beneficiaries to withdraw a desired amount from this contract.
 

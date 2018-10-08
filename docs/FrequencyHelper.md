@@ -1,5 +1,7 @@
 ﻿# FrequencyHelper.sol
 
+**↘ Derived Contracts: [VestingSchedule](VestingSchedule.md)**.
+
 **FrequencyHelper**
 
 ## Enums
